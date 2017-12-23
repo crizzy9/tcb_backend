@@ -1,7 +1,7 @@
 {
-  "name": "jam_n_jam_backend",
+  "name": "tcb_backend",
   "version": "1.0.0",
-  "description": "backend for Jam N Jam website application written in expressjs",
+  "description": "backend for TheCodeBase website application written in expressjs",
   "main": "server/main.js",
   "scripts": {
     "clean": "rm -rf node_modules",
@@ -13,11 +13,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://confused_virus@bitbucket.org/athulkarthik/jam_n_jam_backend.git"
+    "url": "https://confused_virus@bitbucket.org/confused_virus/tcb_backend.git"
   },
   "author": "exMachina",
   "license": "MIT",
-  "homepage": "https://bitbucket.org/athulkarthik/jam_n_jam_backend#readme",
+  "homepage": "https://www.shyampadia.com",
   "dependencies": {
     "bcrypt": "^1.0.2",
     "body-parser": "^1.17.2",

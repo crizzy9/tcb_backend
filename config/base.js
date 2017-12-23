@@ -20,8 +20,8 @@ module.exports = {
     // SECURE_STATUS_EXPIRATION: 300, //seconds
 
     //Tokens
-    // TOKEN_AUDIENCE: 'http://jamnjam.com/app',
-    // TOKEN_ISSUER: 'http://jamnjam.com/api',
+    // TOKEN_AUDIENCE: 'http://shyampadia.com/app',
+    // TOKEN_ISSUER: 'http://shyampadia.com/api',
     // TOKEN_EXP_ACCESS: 3600,
     // TOKEN_EXP_REFRESH: 30 * 24 * 3600,
     // TOKEN_EXP_VERIFY_EMAIL: 7 * 24 * 3600,

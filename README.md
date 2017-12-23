@@ -1,6 +1,6 @@
-# Jam N' Jam express backend
+# The Code Base express backend
 
-This repository contains the backend logic and api for [Jam N' Jam] application written in ES6. It is part of the JNJ backend eco system, which is a collection of multiple services working together to serve the JNJ backend api. This application is built using MEAN stack.
+This repository contains the backend logic and api for `The Code Base` application written in ES6. It is part of the JNJ backend eco system, which is a collection of multiple services working together to serve the JNJ backend api. This application is built using MEAN stack.
 
 ## Before you get started
 
