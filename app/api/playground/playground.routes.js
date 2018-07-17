@@ -47,7 +47,6 @@ router.post('/api/food', function (req, res) {
         let maximum = Math.max.apply(Math, foods.map(function (f) { return f.id; }));
         id = maximum + 1;
     }
-    console.log("req body", req.body);
     let new_food = {"id": id, "name": req.body.name};
     foods.push(new_food);
     res.send(new_food);

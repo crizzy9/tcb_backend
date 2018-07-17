@@ -73,6 +73,9 @@ module.exports = function () {
     // Set global headers
     app.all('/*', (req, res, next) => {
         res.header('X-Version', APP_VERSION);
+        // res.header("Access-Control-Allow-Origin", "*");
+        // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        // next is very important if removed router wont load
         next();
     });
 
