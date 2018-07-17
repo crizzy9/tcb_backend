@@ -36,10 +36,17 @@ module.exports = function () {
     app.set('trust_proxy', 1);
 
     // CORS
+    // app.use(cors({
+    //     origin: APP_ORIGINS,
+    //     credentials: true // needed for cross domain cookies to work
+    // }));
+    
     app.use(cors({
-        origin: APP_ORIGINS,
-        credentials: true // needed for cross domain cookies to work
+        origin: '*',
+        credentials: true
     }));
+
+    app.options('*', cors());
 
     // Compression
     app.use(compression({
@@ -73,10 +80,19 @@ module.exports = function () {
     // Set global headers
     app.all('/*', (req, res, next) => {
         res.header('X-Version', APP_VERSION);
-        // res.header("Access-Control-Allow-Origin", "*");
-        // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        res.setHeader("Access-Control-Allow-Origin", "*");
+        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+        res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        res.setHeader('Access-Control-Allow-Credentials', true);
         // next is very important if removed router wont load
         next();
+    });
+
+    // Fullfill pre-flight/promise request
+    app.options('/*', function(req, res) {
+        console.log("Resolving options request");
+        console.log(req);
+        res.send(200);
     });
 
     // Load router

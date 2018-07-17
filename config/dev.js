@@ -49,5 +49,6 @@ module.exports = Object.assign({}, base, {
     ],
 
     //Tokens
+    // Put API Secret here?
     TOKEN_SECRET: 'SECRET_KEY',
 });

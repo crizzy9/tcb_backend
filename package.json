@@ -5,7 +5,7 @@
   "main": "server/main.js",
   "scripts": {
     "clean": "rm -rf node_modules",
-    "start": "if [$NODE_ENV == 'prod']; then npm run prod; else npm run dev; fi",
+    "start": "if-env NODE_ENV=production && npm run prod || npm run dev",
     "dev": "nodemon server/main.js",
     "prod": "node server/main.js",
     "inspect": "nodemon --inspect server/main.js",
@@ -27,6 +27,7 @@
     "cors": "^2.8.4",
     "express": "^4.15.3",
     "glob": "^7.1.2",
+    "if-env": "^1.0.4",
     "moment": "^2.18.1",
     "mongoose": "^4.11.3",
     "morgan": "^1.8.2",
@@ -34,5 +35,5 @@
     "path": "^0.12.7",
     "yargs": "^8.0.2"
   },
-  "_comment": "dependencies to remove: chalk, glob, path, yargs. Create own logger instead of chalk"
+  "_comment": "change homepage link, dependencies to remove: chalk, glob, path, yargs. Create own logger instead of chalk"
 }
