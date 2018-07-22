@@ -5,23 +5,27 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const compression = require('compression');
 const morgan = require('morgan');
+// const session = require('express-session');
+// const flash = require('connect-flash');
 
 // Define these middlewares in app and use it
-const routes = require('./api/routes');
+// const routes = require('./api/routes');
 // const errors = require();
 // const authenticate = require();
 // const initLocals = require();
 // const ensureValidOrigin = require();
 // const BadRequestError = errors.BadRequestError;
 
+// Initilize
+require('./init/db')();
+require('./api/users/passport');
+
 const config = require('./config');
+const routes = require('./api/routes');
 
 // Configuration
 const APP_VERSION = config.APP_VERSION;
 const APP_ORIGINS = config.APP_ORIGINS;
-
-// Initilize
-require('./init/db')();
 
 // Exporting express module with configurations
 module.exports = function () {
@@ -75,7 +79,10 @@ module.exports = function () {
     // app.use(authenticate);
 
     // Initialize passport
+    // app.use(session({ secret: 'secret?notsomuch'}));
     app.use(passport.initialize());
+    // app.use(passport.session());
+    // app.use(flash());
 
     // Set global headers
     app.all('/*', (req, res, next) => {

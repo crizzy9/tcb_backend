@@ -10,5 +10,4 @@ router.use('/users', userRouter);
 router.use('/about', aboutRouter);
 router.use('/playground', playgroundRouter);
 
-
-module.exports = router
+module.exports = router;

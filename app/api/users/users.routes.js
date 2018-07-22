@@ -1,16 +1,17 @@
 const express = require('express');
-const passport = require('passport');
-const User = require('./users.model');
 const router = express.Router();
-
-// const db = require('../../init/db');
-
-// router.get('/all', function(req, res) {
-//     res.send("lalalal");
-// });
-
-router.get('/', (req, res) => {
-    res.render('index', { user: req.user });
+const jwt = require('express-jwt');
+const auth = jwt({
+    secret: 'secret?notsomuch',
+    userProperty: 'payload'
 });
 
-module.exports = router
+var profile = require('./profile');
+var userAuth = require('./authentication');
+
+router.get('/profile', auth, profile.profileRead);
+
+router.post('/register', userAuth.register);
+router.post('/login', userAuth.login);
+
+module.exports = router;
