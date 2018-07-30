@@ -2,7 +2,8 @@ var mongoose = require('mongoose');
 var Users = mongoose.model('Users');
 
 module.exports.profileRead = function(req, res) {
-
+    console.log(req.payload);
+    console.log(req);
     if (!req.payload._id) {
         res.status(401).json({
             "message": "AutenticationError: Private Profile"
