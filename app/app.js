@@ -106,7 +106,7 @@ module.exports = function () {
     // router(app);
 
     // Loading routes
-    app.use('/', routes);
+    app.use('/api/', routes);
 
     // Handle invalid routes (e.g. not captured by router)
     // app.all('/*', (req, res, next) => {

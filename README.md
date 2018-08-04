@@ -55,6 +55,15 @@ To get started simply run:
 npm install
 ```
 
+Other dependancies to install
+```
+brew install mongodb
+brew services start mongodb
+sudo mkdir -p /data/db
+sudo chown -R `id -un` /data/db
+mongo
+```
+
 Once all the dependencies have been installed, `start` the server using:
 ``` shell
 npm start
